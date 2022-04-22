@@ -1,0 +1,21 @@
+.navigator {
+  background-color: black;
+  height: 50px;
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: start;
+  }
+
+  .nav-link {
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-left: 1%;
+  }
+}
