@@ -25,12 +25,12 @@ const RecipeBook = () => {
 
   const handleLikeButton = async () => {
     if (liked === true) {
-      // const data = await removeLikedFilm(filmId);
-      // setFilm(data);
+      // const data = await removeLikedRecipe(recipeId);
+      // setRecipe(data);
       setLiked(false);
     } else {
-      // const data = await addLikedFilm(filmId);
-      // setFilm(data);
+      // const data = await addLikedRecipe(recipeId);
+      // setRecipe(data);
       setLiked(true);
     }
   };
