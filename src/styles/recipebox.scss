@@ -1,4 +1,4 @@
-.recipe-card {
+.recipebox-card {
   transition: 0.5s ease-in-out;
   .card-text {
     color: black;
@@ -13,18 +13,8 @@
       color: black;
       text-decoration: none;
     }
-    // .x-mark {
-    //   color: antiquewhite;
-    // }
   }
+  // .x-mark {
+  //   color: antiquewhite;
+  // }
 }
-
-// .x-mark {
-//   color: #000;
-//   transition: 0.25s ease-in-out;
-
-//   &:hover {
-//     cursor: pointer;
-//     transform: scale(2);
-//   }
-// }

@@ -4,7 +4,6 @@ import { getAllRecipes } from '../lib/api';
 
 const RecipeBook = () => {
   const [recipeBook, setRecipeBook] = React.useState(null);
-  const [liked, setLiked] = React.useState(null);
 
   React.useEffect(() => {
     const getRecipes = async () => {
@@ -23,18 +22,6 @@ const RecipeBook = () => {
     return <p>Loading...</p>;
   }
 
-  const handleLikeButton = async () => {
-    if (liked === true) {
-      // const data = await removeLikedRecipe(recipeId);
-      // setRecipe(data);
-      setLiked(false);
-    } else {
-      // const data = await addLikedRecipe(recipeId);
-      // setRecipe(data);
-      setLiked(true);
-    }
-  };
-
   return (
     <section>
       <div className="title is-1 has-text-centered"> Recipe Book </div>
@@ -46,28 +33,18 @@ const RecipeBook = () => {
               className="column card m-5 is-one-quarter recipe-card"
             >
               <Link to={`/singlerecipe/${recipe.id}`}>
-                <strong>Name: </strong>
-                {recipe.name} <br />
-                <strong>Description: </strong>
-                {recipe.description} <br />
-                <strong>Prep Time: </strong>
-                {recipe.prep} <strong>min</strong> <br />
-                <strong>Total Time:</strong> {recipe.total} <br />
-                {/* {recipe.ingredients} <br /> */}
-                <strong>Directions: </strong>
-                <div className="directions">
-                  {/* {recipe.directions} <br /> */}
-                </div>
-                <figure className="image is-5by6">
+                <p className="card-text">
+                  <strong>Name: </strong>
+                  {recipe.name} <br />
+                  <strong>Prep Time: </strong>
+                  {recipe.prep} min <br />
+                  <strong>Total Time:</strong> {recipe.total} min{' '}
+                </p>{' '}
+                <br />
+                <figure className="image is-4by5">
                   <img src={recipe.image} alt={recipe.name} />
                 </figure>
               </Link>
-              <button
-                className="like-button button is-info"
-                onClick={handleLikeButton}
-              >
-                {liked ? '♥' : '♡'}
-              </button>
             </div>
           ))}
         </div>

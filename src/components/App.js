@@ -9,6 +9,7 @@ import RecipeBook from './RecipeBook';
 import SingleRecipe from './SingleRecipe';
 import CreateRecipe from './CreateRecipe';
 import RecipeBox from './RecipeBox';
+import RecipeCard from './RecipeCard';
 
 import '../styles/style.scss';
 
@@ -23,6 +24,8 @@ const App = () => (
       <Route path="/singlerecipe/:recipeId" element={<SingleRecipe />} />
       <Route path="/createrecipe" element={<CreateRecipe />} />
       <Route path="/recipebox" element={<RecipeBox />} />
+      <Route path="/recipebox/:recipeId" element={<RecipeCard />} />
+      <Route path="/logout" element={<Home />} />
     </Routes>
   </BrowserRouter>
 );

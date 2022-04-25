@@ -56,3 +56,11 @@ export const getAllUsers = async () => {
   const { data } = await axios.request(options);
   return data;
 };
+
+export const removeToken = () => {
+  window.sessionStorage.removeItem('token');
+};
+
+export const removeUserId = () => {
+  window.sessionStorage.removeItem('userId');
+};

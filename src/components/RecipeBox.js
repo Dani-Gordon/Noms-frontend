@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getAllLikedRecipesForUser } from '../lib/api';
-// import { useParams } from 'react-router-dom';
 
 const RecipeBox = () => {
-  // const { id } = useParams();
   const [recipeBox, setRecipeBox] = React.useState(null);
 
   React.useEffect(() => {
@@ -26,23 +24,21 @@ const RecipeBox = () => {
 
   return (
     <section>
-      <div className="title is-1 has-text-centered"> Recipe Box </div>
+      <div className="title is-1 has-text-centered"> Noms Box </div>
       <div className="container">
         <div className="columns is-multiline">
           {recipeBox.map((recipe) => (
             <div
               key={recipe.id}
-              className="column card m-5 is-one-quarter recipe-card"
+              className="column card m-5 is-one-quarter recipebox-card"
             >
-              <Link to={`/recipebox/${recipe.id}/myFavorite`}>
-                {recipe.name} <br />
-                {recipe.description} <br />
-                Prep Time: {recipe.prep} <br />
-                Total Time: {recipe.total} <br />
-                {/* {recipe.ingredients} <br /> */}
-                <div className="directions">
-                  {/* {recipe.directions} <br /> */}
-                </div>
+              <Link to={`/recipebox/${recipe.id}/`}>
+                <p className="card-text">
+                  {recipe.name} <br />
+                  {recipe.description} <br />
+                  Prep Time: {recipe.prep} min <br />
+                  Total Time: {recipe.total} min <br />
+                </p>
                 <figure className="image is-5by6">
                   <img src={recipe.image} alt={recipe.name} />
                 </figure>
