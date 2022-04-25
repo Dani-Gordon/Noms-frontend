@@ -37,77 +37,79 @@ const Register = () => {
 
   return (
     <>
-      <h1 className="title is-1 has-text-centered">Register Here</h1>
-      <section className="section">
-        <div className="container">
-          <div className="column is-half is-offset-one-quarter box">
-            <form onSubmit={handleSubmit}>
-              <div className="field">
-                <label htmlFor="username" className="label">
-                  Username
-                </label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input"
-                    id="username"
-                    value={usernameValue}
-                    onChange={handleUsernameChange}
-                  />
+      <div className="register-container">
+        <h1 className="title is-1 has-text-centered">Register Here</h1>
+        <section className="section">
+          <div className="container">
+            <div className="column is-half is-offset-one-quarter box">
+              <form onSubmit={handleSubmit}>
+                <div className="field">
+                  <label htmlFor="username" className="label">
+                    Username
+                  </label>
+                  <div className="control">
+                    <input
+                      type="text"
+                      className="input"
+                      id="username"
+                      value={usernameValue}
+                      onChange={handleUsernameChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="field">
-                <label htmlFor="email" className="label">
-                  Email
-                </label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input"
-                    id="email"
-                    value={emailValue}
-                    onChange={handleEmailChange}
-                  />
+                <div className="field">
+                  <label htmlFor="email" className="label">
+                    Email
+                  </label>
+                  <div className="control">
+                    <input
+                      type="text"
+                      className="input"
+                      id="email"
+                      value={emailValue}
+                      onChange={handleEmailChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="field">
-                <label htmlFor="password" className="label">
-                  Password
-                </label>
-                <div className="control">
-                  <input
-                    type="password"
-                    className="input"
-                    id="password"
-                    placeholder="8-12 characters - one upper/lower and special chararacter"
-                    value={passwordValue}
-                    onChange={handlePasswordChange}
-                  />
+                <div className="field">
+                  <label htmlFor="password" className="label">
+                    Password
+                  </label>
+                  <div className="control">
+                    <input
+                      type="password"
+                      className="input"
+                      id="password"
+                      placeholder="8-12 characters - one upper/lower and special chararacter"
+                      value={passwordValue}
+                      onChange={handlePasswordChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="field">
-                <label htmlFor="password" className="label">
-                  Confirm Password
-                </label>
-                <div className="control">
-                  <input
-                    type="password"
-                    className="input"
-                    id="passwordConfirmation"
-                    value={passwordConfirmationValue}
-                    onChange={handlePasswordConfirmationChange}
-                  />
+                <div className="field">
+                  <label htmlFor="password" className="label">
+                    Confirm Password
+                  </label>
+                  <div className="control">
+                    <input
+                      type="password"
+                      className="input"
+                      id="passwordConfirmation"
+                      value={passwordConfirmationValue}
+                      onChange={handlePasswordConfirmationChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <input
-                type="submit"
-                className="button is-dark is-responsive"
-                value="Register"
-              />
-            </form>
+                <input
+                  type="submit"
+                  className="button is-dark is-responsive"
+                  value="Register"
+                />
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 };

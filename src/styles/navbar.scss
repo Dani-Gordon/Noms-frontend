@@ -2,19 +2,22 @@
   background-color: black;
   height: 50px;
   text-align: center;
+  z-index: 10;
 
   a {
     color: white;
     text-decoration: none;
   }
 
-  a #logout-link {
-    margin-top: 15px;
-  }
+  // a #logout-link {
+  //   margin-top: 15px;
+  // }
 
   .nav {
+    display: inline;
     display: flex;
     flex-direction: start;
+    align-content: center;
   }
 
   .nav-link {

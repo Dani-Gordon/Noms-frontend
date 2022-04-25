@@ -18,19 +18,15 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="navigator">
-        <div className="nav">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-          <Link to="/recipebook" className="nav-link">
-            Recipe Book
-          </Link>
-        </div>
-      </div>
       {getLoggedInUserId() ? (
         <div className="navigator">
           <div className="nav-link">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/recipebook" className="nav-link">
+              Recipe Book
+            </Link>
             <Link to="/createrecipe" className="nav-link">
               Add Recipe
             </Link>
@@ -45,6 +41,12 @@ const Navbar = () => {
       ) : (
         <div className="navigator">
           <div className="nav-link">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/recipebook" className="nav-link">
+              Recipe Book
+            </Link>
             <Link to="/register" className="nav-link">
               Sign Up
             </Link>

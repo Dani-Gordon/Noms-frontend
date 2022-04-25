@@ -23,48 +23,50 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="title is-1 has-text-centered">Login</h1>
-      <section className="section">
-        <div className="container">
-          <div className="column is-half is-offset-one-quarter box">
-            <form onSubmit={handleSubmit}>
-              <div className="field">
-                <label htmlFor="email" className="label">
-                  Email
-                </label>
-                <div className="control">
-                  <input
-                    type="text"
-                    className="input"
-                    id="email"
-                    value={emailValue}
-                    onChange={handleEmailChange}
-                  />
+      <div className="login-container">
+        <h1 className="title is-1 has-text-centered">Login</h1>
+        <section className="section">
+          <div className="container">
+            <div className="column is-half is-offset-one-quarter box">
+              <form onSubmit={handleSubmit}>
+                <div className="field">
+                  <label htmlFor="email" className="label">
+                    Email
+                  </label>
+                  <div className="control">
+                    <input
+                      type="text"
+                      className="input"
+                      id="email"
+                      value={emailValue}
+                      onChange={handleEmailChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="field">
-                <label htmlFor="password" className="label">
-                  Password
-                </label>
-                <div className="control">
-                  <input
-                    type="password"
-                    className="input"
-                    id="password"
-                    value={passwordValue}
-                    onChange={handlePasswordChange}
-                  />
+                <div className="field">
+                  <label htmlFor="password" className="label">
+                    Password
+                  </label>
+                  <div className="control">
+                    <input
+                      type="password"
+                      className="input"
+                      id="password"
+                      value={passwordValue}
+                      onChange={handlePasswordChange}
+                    />
+                  </div>
                 </div>
-              </div>
-              <input
-                type="submit"
-                className="button is-dark is-responsive"
-                value="Login"
-              />
-            </form>
+                <input
+                  type="submit"
+                  className="button is-dark is-responsive"
+                  value="Login"
+                />
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 };

@@ -1,7 +1,18 @@
+.singlerecipe-container {
+  background-image: url('https://res.cloudinary.com/dwzd3yh9s/image/upload/v1650903310/calum-lewis-vA1L1jRTM70-unsplash_1_ugmihj.jpg');
+  background-size: cover;
+  background-position: center;
+  // height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+}
+
 .single-recipe-card {
-  background-color: rgba(74, 69, 80, 0.589);
+  // background-color: rgba(74, 69, 80, 0.589);
   color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
+  border: 3px solid black;
+
   // transition: 0.5s ease-in-out;
   .card-text {
     text-decoration: none;

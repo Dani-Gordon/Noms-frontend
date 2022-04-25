@@ -29,7 +29,7 @@ const RecipeCard = () => {
       <div className="title is-1 has-text-centered"> Recipe Card </div>
       <div className="container">
         <div className="columns is-multiline">
-          <div className="column card m-5 is-one-half recipecard-card">
+          <div className="column card m-5 is-one-quarter recipecard-card">
             {/* <Link to={`/recipebox/${recipeCard.id}/`}> */}
             <h1>{recipeCard.name}</h1> <br />
             <strong>Description: </strong>

@@ -46,11 +46,10 @@ const SingleRecipe = () => {
   };
   return (
     <div>
-      <div className="title is-1 has-text-centered"> Noms.... </div>
-      <div className="container">
-        <div className="columns is-multiline">
+      <div className="singlerecipe-container">
+        <div className="columns">
           {/* <Link to={`/recipes/detail/${recipeId}`}> */}
-          <div className="column card m-5 is-one-half single-recipe-card">
+          <div className="column card m-5 is-one-quarter single-recipe-card">
             <h1>{singleRecipe.name} </h1>
             <br />
             <strong>Description: </strong>
@@ -68,7 +67,7 @@ const SingleRecipe = () => {
             ))}
             <strong>Directions: </strong>
             {singleRecipe.directions} <br />
-            <figure className="image is-6by7">
+            <figure className="image is-1by1">
               <img src={singleRecipe.image} alt={singleRecipe.name} />
             </figure>
             {/* <img src={singleRecipe.image} alt={singleRecipe.name} /> */}

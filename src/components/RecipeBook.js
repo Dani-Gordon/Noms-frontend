@@ -23,7 +23,8 @@ const RecipeBook = () => {
   }
 
   return (
-    <section>
+    // <section>
+    <div className="recipebook-container">
       <div className="title is-1 has-text-centered"> Recipe Book </div>
       <div className="container">
         <div className="columns is-multiline">
@@ -49,7 +50,8 @@ const RecipeBook = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
+    // </section>
   );
   // <p>{JSON.stringify(recipeBook)}</p>;
 };

@@ -23,19 +23,20 @@ const RecipeBox = () => {
   }
 
   return (
-    <section>
+    <div className="recipebox-container">
       <div className="title is-1 has-text-centered"> Noms Box </div>
       <div className="container">
         <div className="columns is-multiline">
           {recipeBox.map((recipe) => (
             <div
               key={recipe.id}
-              className="column card m-5 is-one-quarter recipebox-card"
+              className="column card m-5 is-one-quarter"
+              id="recipebox-card"
             >
               <Link to={`/recipebox/${recipe.id}/`}>
                 <p className="card-text">
-                  {recipe.name} <br />
-                  {recipe.description} <br />
+                  <strong>{recipe.name}</strong> <br />
+                  {/* {recipe.description} <br /> */}
                   Prep Time: {recipe.prep} min <br />
                   Total Time: {recipe.total} min <br />
                 </p>
@@ -47,7 +48,7 @@ const RecipeBox = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
   // <p>{JSON.stringify(recipeBook)}</p>;
 };
