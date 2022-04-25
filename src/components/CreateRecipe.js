@@ -7,33 +7,16 @@ function CreateOwnRecipe() {
   const [allIngredients, setAllIngredients] = React.useState([
     { id: 0, name: '' },
   ]);
-
+  const [selectedIngredients, setSelectedIngredients] = React.useState([]);
   const [newRecipe, setNewRecipe] = React.useState({
     name: '',
     description: '',
     prep: null,
     total: null,
-    ingredients: '',
+    ingredients: [],
     directions: '',
     image: '',
   });
-
-  function handleChange(event) {
-    setNewRecipe({ ...newRecipe, [event.target.name]: event.target.value });
-  }
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    const getData = async () => {
-      try {
-        await createRecipe(newRecipe);
-        navigate('/recipebox');
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getData();
-  }
 
   React.useEffect(() => {
     const getIngredients = async () => {
@@ -45,14 +28,34 @@ function CreateOwnRecipe() {
       }
     };
     getIngredients();
-  }, []);
+  }, [selectedIngredients]);
+
+  function handleChange(event) {
+    setNewRecipe({ ...newRecipe, [event.target.name]: event.target.value });
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+      await createRecipe({ ...newRecipe, ingredients: selectedIngredients });
+      navigate('/recipebook');
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const handleIngredientSelect = (e) => {
-    setNewRecipe({
-      ...newRecipe,
-      ingredients: [...newRecipe.ingredients, e.target.dataset.id],
-    });
+    e.preventDefault();
+    console.log({ selectedIngredients });
+    setSelectedIngredients(
+      selectedIngredients.includes(e.target.dataset.id)
+        ? selectedIngredients.filter((i) => i !== e.target.dataset.id)
+        : [...selectedIngredients, e.target.dataset.id]
+    );
   };
+
+  console.log({ selectedIngredients });
 
   return (
     <section className="section">
@@ -94,7 +97,7 @@ function CreateOwnRecipe() {
                   placeholder="total Prep time (mins)"
                   name="prep"
                   onChange={handleChange}
-                  value={newRecipe.prep}
+                  value={newRecipe.prep || 0}
                 />
               </div>
             </div>
@@ -106,31 +109,39 @@ function CreateOwnRecipe() {
                   placeholder="Prep + Cook time (total mins)"
                   name="total"
                   onChange={handleChange}
-                  value={newRecipe.total}
+                  value={newRecipe.total || 0}
                 />
               </div>
             </div>
-            <div className="field">
+            <div className="field checkboxes">
               <label className="label">Ingredients</label>
-              {allIngredients.map((ingredient) => (
-                <button
-                  type="checkbox"
-                  onChange={handleIngredientSelect}
-                  key={ingredient.id}
-                  value={ingredient.name}
-                  data-id={ingredient.name}
-                >
-                  {ingredient.name}
-                </button>
-              ))}
-              <div className="control">
-                <input
-                  className="input"
-                  placeholder="ingredients"
-                  name="ingredients"
-                  onChange={handleChange}
-                  value={newRecipe.ingredients}
-                />
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {allIngredients.map((ingredient) => {
+                  //is ground beef an alredy selected ingredient?
+                  console.log('IGNREDIENTS ARE', newRecipe.ingredients);
+                  const isChecked = selectedIngredients.includes(
+                    ingredient.name
+                  );
+                  return (
+                    <div style={{ width: '50%' }} key={ingredient.id}>
+                      <label
+                        htmlFor={ingredient.id}
+                        style={{ display: 'block' }}
+                      >
+                        {ingredient.name}
+                        <input
+                          style={{ marginLeft: '5px' }}
+                          checked={isChecked}
+                          id={ingredient.id}
+                          type="checkbox"
+                          onChange={handleIngredientSelect}
+                          value={ingredient.name}
+                          data-id={ingredient.name}
+                        ></input>
+                      </label>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="field">
@@ -158,7 +169,7 @@ function CreateOwnRecipe() {
               </div>
               <div className="field">
                 <button type="submit" className="button is-dark is-fullwidth">
-                  Add to your Noms Box!
+                  Add to Recipe Book!
                 </button>
               </div>
             </div>

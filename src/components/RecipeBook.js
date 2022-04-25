@@ -41,7 +41,7 @@ const RecipeBook = () => {
                   <strong>Total Time:</strong> {recipe.total} min{' '}
                 </p>{' '}
                 <br />
-                <figure className="image is-4by5">
+                <figure className="image is-6by7">
                   <img src={recipe.image} alt={recipe.name} />
                 </figure>
               </Link>

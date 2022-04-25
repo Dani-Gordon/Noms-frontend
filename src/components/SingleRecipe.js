@@ -68,7 +68,7 @@ const SingleRecipe = () => {
             ))}
             <strong>Directions: </strong>
             {singleRecipe.directions} <br />
-            <figure className="image is-4by5">
+            <figure className="image is-6by7">
               <img src={singleRecipe.image} alt={singleRecipe.name} />
             </figure>
             {/* <img src={singleRecipe.image} alt={singleRecipe.name} /> */}
