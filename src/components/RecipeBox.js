@@ -36,7 +36,6 @@ const RecipeBox = () => {
               <Link to={`/recipebox/${recipe.id}/`}>
                 <p className="card-text">
                   <strong>{recipe.name}</strong> <br />
-                  {/* {recipe.description} <br /> */}
                   Prep Time: {recipe.prep} min <br />
                   Total Time: {recipe.total} min <br />
                 </p>
@@ -50,7 +49,6 @@ const RecipeBox = () => {
       </div>
     </div>
   );
-  // <p>{JSON.stringify(recipeBook)}</p>;
 };
 
 export default RecipeBox;

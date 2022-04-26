@@ -2,47 +2,21 @@
   background-image: url('https://res.cloudinary.com/dwzd3yh9s/image/upload/v1650903310/calum-lewis-vA1L1jRTM70-unsplash_1_ugmihj.jpg');
   background-size: cover;
   background-position: center;
-  // height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
 }
 
 .single-recipe-card {
-  // background-color: rgba(74, 69, 80, 0.589);
   color: rgb(0, 0, 0);
   font-family: 'Lato', sans-serif;
   border: 3px solid black;
+  background-color: antiquewhite;
 
-  // transition: 0.5s ease-in-out;
   .card-text {
     text-decoration: none;
   }
   h1 {
     font-size: 40px;
     color: black;
-    // font-family: 'Lato', sans-serif;
   }
-  // &:hover {
-  //   cursor: pointer;
-  //   background-color: rgb(0, 0, 0);
-  //   color: white;
-  // transform: scale(1.1);
-  // .card-text {
-  //   color: black;
-  //   text-decoration: none;
-  // }
-  // .x-mark {
-  //   color: antiquewhite;
-  // }
 }
-// }
-
-// .x-mark {
-//   color: #000;
-//   transition: 0.25s ease-in-out;
-
-//   &:hover {
-//     cursor: pointer;
-//     transform: scale(2);
-//   }
-// }

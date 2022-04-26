@@ -74,18 +74,14 @@ function CreateOwnRecipe() {
     return [...selectedIngredients, ingredientId];
   }
 
-  //console.log({ selectedIngredients });
-
   //is ground beef an alredy selected ingredient?
-  // console.log('IGNREDIENTS ARE', newRecipe.ingredients);
+
   const isChecked = function (ingredientId) {
     let isSelected = selectedIngredients.includes(ingredientId);
-    //console.log(`Ingredient ${ingredientId} is selected: ${isSelected}`)
     return isSelected;
   };
 
   return (
-    // <section className="createrecipe-container">
     <div className="createrecipe-container">
       <div className="columns">
         <form
@@ -195,7 +191,6 @@ function CreateOwnRecipe() {
         </form>
       </div>
     </div>
-    // </section>
   );
 }
 

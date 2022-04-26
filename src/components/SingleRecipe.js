@@ -35,12 +35,10 @@ const SingleRecipe = () => {
       console.log('already liked');
       const data = await removeLikedRecipe(recipeId);
       console.log('unliked', data);
-      // setSingleRecipe(data);
       setLiked(false);
     } else {
       const data = await addLikedRecipe(recipeId);
       console.log('liked', data);
-      // setSingleRecipe(data);
       setLiked(true);
     }
   };
@@ -48,7 +46,6 @@ const SingleRecipe = () => {
     <div>
       <div className="singlerecipe-container">
         <div className="columns">
-          {/* <Link to={`/recipes/detail/${recipeId}`}> */}
           <div className="column card m-5 is-one-quarter single-recipe-card">
             <h1>{singleRecipe.name} </h1>
             <br />
@@ -70,7 +67,6 @@ const SingleRecipe = () => {
             <figure className="image is-1by1">
               <img src={singleRecipe.image} alt={singleRecipe.name} />
             </figure>
-            {/* <img src={singleRecipe.image} alt={singleRecipe.name} /> */}
             <br />
             {getLoggedInUserId() && (
               <>
@@ -83,7 +79,6 @@ const SingleRecipe = () => {
               </>
             )}
           </div>
-          {/* </Link> */}
         </div>
       </div>
     </div>

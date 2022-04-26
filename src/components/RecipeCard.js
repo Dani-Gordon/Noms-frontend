@@ -30,7 +30,6 @@ const RecipeCard = () => {
       <div className="container">
         <div className="columns is-multiline">
           <div className="column card m-5 is-one-quarter recipecard-card">
-            {/* <Link to={`/recipebox/${recipeCard.id}/`}> */}
             <h1>{recipeCard.name}</h1> <br />
             <strong>Description: </strong>
             {recipeCard.description} <br />
@@ -51,13 +50,11 @@ const RecipeCard = () => {
               <img src={recipeCard.image} alt={recipeCard.name} />
             </figure>
             <br />
-            {/* </Link> */}
           </div>
         </div>
       </div>
     </section>
   );
-  // <p>{JSON.stringify(recipeBook)}</p>;
 };
 
 export default RecipeCard;

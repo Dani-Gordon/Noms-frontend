@@ -23,7 +23,6 @@ const RecipeBook = () => {
   }
 
   return (
-    // <section>
     <div className="recipebook-container">
       <div className="title is-1 has-text-centered"> Recipe Book </div>
       <div className="container">
@@ -51,7 +50,6 @@ const RecipeBook = () => {
         </div>
       </div>
     </div>
-    // </section>
   );
   // <p>{JSON.stringify(recipeBook)}</p>;
 };
