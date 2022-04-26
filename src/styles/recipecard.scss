@@ -1,14 +1,24 @@
-.recipecard-card {
-  background-color: rgba(74, 69, 80, 0.589);
-  color: rgb(0, 0, 0);
-  font-family: 'Lato', sans-serif;
-  border: 3px solid black;
+.recipecard-container {
+  background-image: url('https://images.unsplash.com/photo-1588346231308-e7098ad13a3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80');
+  background-size: cover;
+  opacity: 0.9;
+  background-position: center;
+  height: 150vh;
+  width: 100vw;
+  background-repeat: no-repeat;
 
-  .card-text {
-    text-decoration: none;
-  }
-  h1 {
-    font-size: 40px;
-    color: black;
+  .recipecard-card {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-family: 'Lato', sans-serif;
+    border: 3px solid black;
+
+    .card-text {
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 40px;
+      color: black;
+    }
   }
 }

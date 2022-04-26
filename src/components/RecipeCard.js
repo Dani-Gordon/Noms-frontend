@@ -26,30 +26,31 @@ const RecipeCard = () => {
 
   return (
     <section>
-      <div className="title is-1 has-text-centered"> Recipe Card </div>
-      <div className="container">
-        <div className="columns is-multiline">
-          <div className="column card m-5 is-one-quarter recipecard-card">
-            <h1>{recipeCard.name}</h1> <br />
-            <strong>Description: </strong>
-            {recipeCard.description} <br />
-            <strong>Prep Time: </strong>
-            {recipeCard.prep} <strong>min</strong>
-            <br />
-            <strong>Total Time: </strong>
-            {recipeCard.total} <strong>min</strong> <br />
-            <strong>Ingredients:</strong>
-            {recipeCard.ingredients.map((food) => (
-              <div key={food.ingredient.id}>
-                {food.quantity} - {food.ingredient.name}
-              </div>
-            ))}
-            <strong>Directions: </strong>
-            {recipeCard.directions} <br />
-            <figure className="image is-5by6">
-              <img src={recipeCard.image} alt={recipeCard.name} />
-            </figure>
-            <br />
+      <div className="recipecard-container">
+        <div className="container">
+          <div className="columns is-multiline">
+            <div className="column card m-5 is-one-quarter recipecard-card">
+              <h1>{recipeCard.name}</h1> <br />
+              <strong>Description: </strong>
+              {recipeCard.description} <br />
+              <strong>Prep Time: </strong>
+              {recipeCard.prep} <strong>min</strong>
+              <br />
+              <strong>Total Time: </strong>
+              {recipeCard.total} <strong>min</strong> <br />
+              <strong>Ingredients:</strong>
+              {recipeCard.ingredients.map((food) => (
+                <div key={food.ingredient.id}>
+                  {food.quantity} - {food.ingredient.name}
+                </div>
+              ))}
+              <strong>Directions: </strong>
+              {recipeCard.directions} <br />
+              <figure className="image is-5by6">
+                <img src={recipeCard.image} alt={recipeCard.name} />
+              </figure>
+              <br />
+            </div>
           </div>
         </div>
       </div>

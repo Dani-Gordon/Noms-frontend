@@ -74,8 +74,6 @@ function CreateOwnRecipe() {
     return [...selectedIngredients, ingredientId];
   }
 
-  //is ground beef an alredy selected ingredient?
-
   const isChecked = function (ingredientId) {
     let isSelected = selectedIngredients.includes(ingredientId);
     return isSelected;
@@ -86,6 +84,7 @@ function CreateOwnRecipe() {
       <div className="columns">
         <form
           className="column is-half is-offset-one-quarter box"
+          id="homecooking"
           onSubmit={handleSubmit}
         >
           <div className="field">
